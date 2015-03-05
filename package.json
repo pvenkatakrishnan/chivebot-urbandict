@@ -1,0 +1,16 @@
+{
+  "name": "chivebot-urbandict",
+  "version": "0.0.0",
+  "description": "a plugin to slack for looking up dictionary",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "wreck": "^5.2.0"
+  }
+}
