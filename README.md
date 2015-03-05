@@ -1,1 +1,1 @@
-#### chivebot-urabndict
+#### chivebot-urbandict
