@@ -14,20 +14,18 @@ function getMeaning(word, cb) {
         'https://mashape-community-urban-dictionary.p.mashape.com/define?term=' + word,
         options,
         function(err, response) {
+            var message = 'I dont know whatcha talkin about ¯\_(ツ)_/¯';
             if(!err) {
                 wreck.read(response, null, function (err, result) {
                     if(!err) {
-                        if(result.list && result.list.length > 0) {
-                            cb(null, result.list[0].definition);
-                        } else {
-                            cb(null, 'I dont know whatcha talkin about ¯\_(ツ)_/¯');
+                        if(Array.isArray(result.list) && result.list.length > 0) {
+                            return cb(null, result.list[0].definition);
                         }
-                    } else {
-                        cb(null, 'I dont know whatcha talkin about ¯\_(ツ)_/¯');
                     }
+                    cb(null, message);
                 });
             } else {
-              cb(null, 'I dont know whatcha talkin about ¯\_(ツ)_/¯');
+              cb(null, message);
             }
         });
 }
